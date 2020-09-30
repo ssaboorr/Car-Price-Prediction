@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Car Price Prediction!</title>
+  </head>
+  <body>
+    <div class="container" align="center">
+        <h1>Enter CAR Info For Price Prediction</h1>
+        <hr>
+
+        <form action="{{ url_for('predict')}}" method="post">
+  <div class="form-group">
+    <div class="form-group col-md-2">
+      <label>Year</label>
+      <input name="Year" type="number" class="form-control" id="year">
+    </div>
+    <div class="form-group col-md-2">
+      <label>Showroom Price in Lakhs</label>
+      <input type="number" name="Present_price" class="form-control" id="price" required="required">
+    </div>
+  </div>
+  <div class="form-group col-md-2">
+    <label>KM Driven</label>
+    <input type="number" name="Kms_Driven" class="form-control" id="km_driven">
+  </div>
+  <div class="form-group col-md-2">
+    <label>Number or previous Owners</label>
+    <input type="number" name="Owner" class="form-control" id="inputAddress2" placeholder="0,1 or 3">
+  </div>
+  <div class="form-group">
+    <div class="form-group col-md-2">
+      <label>Fuel Type</label>
+      <select id="fuel" name="Fuel_Type_Petrol" required="required" class="form-control">
+        <option selected>Choose...</option>
+        <option>Petrol</option>
+          <option>Disel</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label>Dealer</label>
+      <select id="dealer" name="Seller_Type_Individual" class="form-control" required="required">
+        <option selected>Choose...</option>
+        <option>Dealer</option>
+          <option>Individual</option>
+      </select>
+    </div>
+      <div class="form-group col-md-2">
+      <label>Transmission</label>
+      <select id="transmission" name="Transmission_Mannual" required="required" class="form-control">
+        <option selected>Choose...</option>
+        <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+      </select>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Calculate Sellig price</button>
+</form>
+      <hr>
+      <br><br><h3>{{ prediction_texts }}<h3>
+
+
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
